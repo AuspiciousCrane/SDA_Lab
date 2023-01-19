@@ -12,12 +12,17 @@ public class TestBabyMonitor{
         Baby david = new Baby("David");
 
         SimpleBabyMonitor kitchenMonitor = new SimpleBabyMonitor("Kitchen");
+        AdvanceBabyMonitor bedroomMonitor = new AdvanceBabyMonitor("Bedroom");
 
         alice.addObserver(kitchenMonitor);
         bobby.addObserver(kitchenMonitor);
+        carla.addObserver(bedroomMonitor);
+        david.addObserver(bedroomMonitor);
             
         alice.setCry(true, 1);
         bobby.setCry(true, 2);
+        carla.setCry(true, 3);
+        david.setCry(true, 4);
 
         System.out.println("Goodbye from TestBabyMonitor");
     }
