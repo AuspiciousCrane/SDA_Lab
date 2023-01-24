@@ -17,7 +17,7 @@ public class Baby extends Observable{
         this.crying = inCrying;
         this.cryingLevel = inCryingLevel;
         setChanged();
-        notifyObservers();
+        notifyObservers(this.crying);
     }
 
     public String getName(){

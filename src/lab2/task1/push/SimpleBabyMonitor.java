@@ -14,14 +14,10 @@ public class SimpleBabyMonitor implements Observer{
 
     @Override
     public void update(Observable arg0, Object arg1) {
-        Baby baby = (Baby)arg0;
-        display(baby);
-    }
-
-    public void display(Baby baby){
-        if(baby.isCrying()){
-            System.out.println("SimpleBabyMonitor: Location: " + location + " " + "BabyName: " + baby.getName() + " is crying");
+        Boolean babyIsCrying = (Boolean)arg1;
+        if(babyIsCrying){
+            System.out.println("SimpleBabyMonitor at " + location + " baby is crying");
         }
     }
-    
+
 }
