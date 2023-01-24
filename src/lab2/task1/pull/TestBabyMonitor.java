@@ -10,3 +10,4 @@ public class TestBabyMonitor {
 				marla.setData(true, 2);
 			}
 	}
+}
