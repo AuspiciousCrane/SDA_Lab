@@ -1,4 +1,4 @@
-package task1.pull;
+package lab2.task1.pull;
 import java.util.ArrayList;
 
 public class Baby implements Subject {

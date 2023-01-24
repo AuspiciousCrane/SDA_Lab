@@ -1,3 +1,5 @@
+package lab2.task3;
+
 
 public abstract class GameCharacter {
 	GuitarBehavior guitarBehavior;

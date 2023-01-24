@@ -1,3 +1,4 @@
+package lab2.task3;
 
 public class Guitar_GibsonLesPaul implements GuitarBehavior {
 

@@ -1,3 +1,5 @@
+package lab2.task3;
+
 public class GameCharacterSlash extends GameCharacter {
 
 	public GameCharacterSlash() {

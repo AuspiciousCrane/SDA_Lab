@@ -1,4 +1,4 @@
-package task1.pull;
+package lab2.task1.pull;
 public class BabyMonitorSimple implements Observer {
 
 	private Baby mdata;

@@ -1,3 +1,5 @@
+package lab2.task3;
+
 public class Solo_SmashTheGuitar implements SoloBehavior {
 
 	@Override

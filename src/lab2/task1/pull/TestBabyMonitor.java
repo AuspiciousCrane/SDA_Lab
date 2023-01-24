@@ -1,4 +1,4 @@
-package task1.pull;
+package lab2.task1.pull;
 public class TestBabyMonitor {
 	public static void main(String[] args) {
 				Baby marla = new Baby("marla");

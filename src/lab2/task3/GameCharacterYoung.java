@@ -1,3 +1,5 @@
+package lab2.task3;
+
 public class GameCharacterYoung extends GameCharacter {
 
     public GameCharacterYoung() {
