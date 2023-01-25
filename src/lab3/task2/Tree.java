@@ -1,3 +1,5 @@
+package lab3.task2;
+
 public abstract class Tree {
 	String description = "Unknown tree";
 	boolean hasastar=false;

@@ -1,3 +1,4 @@
+package lab3.task2;
 
 public class Star extends TreeDecorator {
 		

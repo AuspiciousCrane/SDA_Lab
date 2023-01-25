@@ -1,3 +1,5 @@
+package lab3.task2;
+
 
 public class RealStar extends TreeDecorator {
 		
