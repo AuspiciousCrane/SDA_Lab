@@ -11,10 +11,27 @@ public class Test_tree {
 		//mytree = new Star(mytree);
 		System.out.println(mytree.getDescription() + " costs:" +mytree.cost());
 
+		System.out.println("Alice tree: ");
 		Tree aliceTree = new Fraserfir();
 		aliceTree = new BallRed(aliceTree);
 		aliceTree = new BallRed(aliceTree);
-		System.out.println(aliceTree.getDescription() + " cost: " + aliceTree.cost());
+		System.out.println(aliceTree.getDescription());
+		System.out.println("Cost: " + aliceTree.cost());
 
+		System.out.println("Bob tree: ");
+		Tree bobTree = new Douglasfir();
+		bobTree = new Star(bobTree);
+		bobTree = new Ruffles(bobTree);
+		bobTree = new BallRed(bobTree);
+		bobTree = new BallSilver(bobTree);
+		bobTree = new BallBlue(bobTree);
+		bobTree = new Ribbon(bobTree);
+		bobTree = new Light(bobTree);
+		bobTree = new LED(bobTree);
+		bobTree = new Star(bobTree);
+		System.out.println(bobTree.getDescription());
+		System.out.println("Cost: " + bobTree.cost());
+
+		System.out.println("Test_tree goodbye");
 	}
 }

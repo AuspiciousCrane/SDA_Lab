@@ -8,7 +8,7 @@ public class RealStar extends TreeDecorator {
 		}
 		
 		public String getDescription() {
-			return tree.getDescription() + "Star";
+			return tree.getDescription() + "Star, ";
 		}
 
 		public double cost() {

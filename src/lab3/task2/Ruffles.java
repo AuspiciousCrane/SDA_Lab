@@ -8,7 +8,7 @@ public class Ruffles extends TreeDecorator {
 		}
 		
 		public String getDescription() {
-			return tree.getDescription() + ", Ruffles";
+			return tree.getDescription() + "Ruffles, ";
 		}
 
 		public double cost() {

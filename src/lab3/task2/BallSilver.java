@@ -9,7 +9,7 @@ public class BallSilver extends TreeDecorator {
     @Override
     public String getDescription() {
         // TODO Auto-generated method stub
-        return this.tree + "ballSilver, ";
+        return this.tree.getDescription() + "ballSilver, ";
     }
 
     @Override
