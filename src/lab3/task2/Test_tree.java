@@ -10,5 +10,11 @@ public class Test_tree {
 		mytree = new Ruffles(mytree);
 		//mytree = new Star(mytree);
 		System.out.println(mytree.getDescription() + " costs:" +mytree.cost());
+
+		Tree aliceTree = new Fraserfir();
+		aliceTree = new BallRed(aliceTree);
+		aliceTree = new BallRed(aliceTree);
+		System.out.println(aliceTree.getDescription() + " cost: " + aliceTree.cost());
+
 	}
 }
