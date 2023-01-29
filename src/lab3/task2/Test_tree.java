@@ -30,6 +30,8 @@ public class Test_tree {
 		bobTree = new LED(bobTree);
 		bobTree = new Star(bobTree);
 		System.out.println(bobTree.getDescription());
+		// expected cost 
+		// bobTree = 15 + 4 + 1 + 1 + 3 + 2 + 2 + 5 + 10 = 43
 		System.out.println("Cost: " + bobTree.cost());
 
 		System.out.println("Test_tree goodbye");
