@@ -1,0 +1,32 @@
+@startuml
+
+title Decorator pattern
+
+abstract class Tree {
+  +description: String
+  +hasastar: Boolean
+  
+  +getDescription(): String
+  +hasastar(): Boolean
+  +setStar(): void
+}
+
+Tree <|-- BlueSpruce
+Tree <|-- Balsamfir 
+
+abstract class TreeDecorator {
+  +Tree: Tree
+  
+  + {abstract} getDescription(): String
+  + {abstract} cost(): Double
+  + setStar(): void
+  + hasStar(): Boolean
+}
+
+TreeDecorator <|-- BallRed
+TreeDecorator <|-- BallBlue
+TreeDecorator <|-- Ruffles
+
+
+
+@enduml
