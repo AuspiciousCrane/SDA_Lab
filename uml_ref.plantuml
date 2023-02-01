@@ -1,0 +1,28 @@
+@startuml
+/'
+This is plantuml diagram
+This document is intended to be used as reference
+for reading uml diagram using example cause
+I (chatchai) keep forgetting direction of arrow
+and what each arrow and how it looks
+
+You can install vscode extension for plantuml
+support and use "Alt + D" keyboard shortcut 
+in order to view the diagram
+'/
+
+' Composition "NEED-A" Water need hydrogen to be water
+Building *-- Room
+Water *-- Hydrogen
+Water *-- Oxygen
+
+' Aggregation "MAYBE HAS/HAVE A"
+Team o-- Player
+Flock o-- Bird
+
+' Inheritance "IS A"
+VideoGame <|-- Minecraft
+VideoGame <|-- Doom
+
+
+@enduml
