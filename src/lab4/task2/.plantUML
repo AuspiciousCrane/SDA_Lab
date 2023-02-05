@@ -1,0 +1,72 @@
+@startuml
+interface Command {
+    void undo()
+    void redo()
+}
+class Document {
+    ArrayList<String> textArray
+    String name
+
+    Integer Write(String text)
+    void WriteAt(Integer index, String text)
+    Integer Erase(String text)
+    void Erase(int number)
+    void Bold(int number)
+    void RemoveBold(int number)
+    String Read()
+}
+
+class DocumentBoldCommand {
+    void undo()
+    void redo()
+    String toString()
+}
+
+class DocumentEraseCommand {
+    void undo()
+    void redo()
+    String toString()
+    Integer getEraseIndex()
+}
+
+class DocumentInvoker {
+    ArrayList<Command> commands;
+    Document currentdoc;
+
+    void Undo()
+    void Redo()
+    void Undo(int level)
+    void Redo(int level)
+    void Write(String text)
+    void Erase(String text)
+    void Bold(int line)
+    void RemoveBold(int line)
+    String Read()
+    void printCommandBuffer()
+}
+class DocumentRemoveBoldCommand {
+    void undo()
+    void redo()
+    String toString()
+}
+
+class DocumentWriteCommand {
+    void undo()
+    void redo()
+    String toString()
+}
+
+class TestEditor {
+    void main(String args[])
+}
+
+Command <|-- DocumentBoldCommand
+Command <|-- DocumentEraseCommand
+Command <|-- DocumentRemoveBoldCommand
+Command <|-- DocumentWriteCommand
+
+Document <-- TestEditor : Uses
+DocumentInvoker <-- TestEditor : Uses
+
+Command <-- DocumentInvoker : Uses
+@enduml
