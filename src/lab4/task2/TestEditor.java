@@ -21,13 +21,18 @@ public class TestEditor {
 	 // -- END --
 	 
 	 // -- Multi-level Undo Redo test --
-	 //myDocument.Undo(0);
-	 //System.out.println(myDocument.Read());
+	 myDocument.Erase("Hey I just met you");
+	 System.out.println(myDocument.Read());
+	 myDocument.Undo();
+	 System.out.println(myDocument.Read());
+	 myDocument.Redo();
+	 System.out.println(myDocument.Read());
+
 	 // -- END --
 	 
 	 // -- Multi-level Undo Redo test 2 --
-	 myDocument.Undo(2);
-	 System.out.println(myDocument.Read());
+	 //myDocument.Undo(2);
+	 //System.out.println(myDocument.Read());
 	}
 //	 myDocument.Erase("So call me maybe");
 //	 System.out.println(myDocument.Read());
