@@ -1,0 +1,8 @@
+SlotFactory order a Slot
+
+To order a Slot we need to
+
+
+To make a Slot we give it a SlotComponentFactory
+SlotComponentFactory produces Component to be used
+by the Slot
