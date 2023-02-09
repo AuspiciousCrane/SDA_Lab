@@ -19,8 +19,10 @@ public class SlotMachineApp {
 		System.out.println("Bob ordered: ");
 		System.out.println(progressiveNVSlot);
 
-
-		
+		SlotFactory wsFactory = new WSSlotFactory();
+		Slot bonusWSSlot = wsFactory.orderSlot("bonus");
+		System.out.println("Carla ordered: ");
+		System.out.println(bonusWSSlot);
 
 	}
 }

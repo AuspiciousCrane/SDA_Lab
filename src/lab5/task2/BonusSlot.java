@@ -8,4 +8,13 @@ public class BonusSlot extends Slot {
 		this.componentFactory= componentFactory;
 	}
 
+	@Override
+	void build() {
+		this.cabinet = componentFactory.createCabinet();
+        this.payment = componentFactory.createPayment();
+        this.display = componentFactory.createDisplay();
+        this.cpu = componentFactory.createCPU();
+        this.os = componentFactory.createOS();
+	}
+
 }
