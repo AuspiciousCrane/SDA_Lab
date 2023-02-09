@@ -1,14 +1,13 @@
 package lab5.task2;
 
-import java.util.ArrayList;
-
 public abstract class Slot {
 	
+	String name = "stub slot";
 	Cabinet cabinet;
+	Payment payment;
 	Display display;
-	String name;
-	String software = "linux";
-	ArrayList components = new ArrayList();
+	CPU cpu;
+	OS os;
 	
 	abstract void build();
 	
@@ -23,7 +22,7 @@ public abstract class Slot {
 		else System.out.println("testing software");
 	}
 	void uploadSoftware() {
-		System.out.println("uploading software:" + software);
+		System.out.println("uploading software:" + os);
 	}
 	void ship() {
 		System.out.println("wrapping the slot machine in Ceram Wrap and shipping it with UPS");
@@ -34,17 +33,18 @@ public abstract class Slot {
 	public void setName(String n) {
 		name=n;
 	}
+
 	public String toString() {
-		StringBuffer result = new StringBuffer();
-		result.append("---- " + name + " ----\n");
-		if (cabinet != null) {
-			result.append(cabinet);
-			result.append("\n");
-		}
-		if (display != null) {
-			result.append(display);
-			result.append("\n");
-		}
-		return result.toString();
+		String result = "";
+		result = String.format(
+			"name: %s \ncabinet: %s \npayment: %s \ndisplay: %s \ncpu: %s \nos: %s \n",
+			this.name,
+			this.cabinet.toString(),
+			this.payment.toString(),
+			this.display.toString(),
+			this.cpu.toString(),
+			this.os.toString());
+
+		return result;
 	}
 }

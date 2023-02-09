@@ -7,9 +7,14 @@ public class ProgressiveSlot extends Slot {
 	public ProgressiveSlot(SlotComponentFactory componentFactory) {
 		this.componentFactory= componentFactory;
 	}
- 
+
+	@Override
 	void build() {
-		cabinet = componentFactory.createCabinet();
-		display = componentFactory.createDisplay();
+		this.cabinet = componentFactory.createCabinet();
+		this.payment = componentFactory.createPayment();
+		this.display = componentFactory.createDisplay();
+		this.cpu = componentFactory.createCPU();
+		this.os = componentFactory.createOS();
 	}
+ 
 }
