@@ -1,0 +1,60 @@
+@startuml
+skinparam classFontName Courier
+
+abstract Slot
+abstract SlotFactory
+abstract SlotComponentFactory
+
+abstract StraightSlot
+abstract BonusSlot
+abstract ProgressiveSlot
+ 
+abstract Cabinet
+abstract Payment
+abstract Display 
+abstract CPU 
+abstract OS 
+
+class NevadaSlotFactory
+class NewJerseySlotFactory
+class WashingtonSlotFactory
+
+class NVStraightSlotComponentFactory
+class NVProgressiveSlotComponentFactory
+
+class WSBonusSlotComponentFactory
+
+
+Slot <|-- StraightSlot
+Slot <|-- BonusSlot
+Slot <|-- ProgressiveSlot
+
+Slot *-- Cabinet
+Slot *-- Payment
+Slot *-- Display
+Slot *-- CPU
+Slot *-- OS
+
+Slot --> SlotComponentFactory: use 
+
+SlotFactory <|-- NevadaSlotFactory
+SlotFactory <|-- NewJerseySlotFactory
+SlotFactory <|-- WashingtonSlotFactory
+
+SlotFactory --> Slot: create
+
+
+SlotComponentFactory <|-- NVStraightSlotComponentFactory
+SlotComponentFactory <|-- NVProgressiveSlotComponentFactory
+SlotComponentFactory <|-- WSBonusSlotComponentFactory
+
+
+Cabinet <|-- SmallCabinet 
+Cabinet <|-- MediumCabinet
+
+
+
+
+
+
+@enduml
