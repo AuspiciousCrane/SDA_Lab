@@ -24,5 +24,8 @@ Flock o-- Bird
 VideoGame <|-- Minecraft
 VideoGame <|-- Doom
 
+' Link to plantuml syntax and feature
+' https://plantuml.com/class-diagram
+
 
 @enduml

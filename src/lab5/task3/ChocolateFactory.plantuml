@@ -1,0 +1,66 @@
+@startuml
+
+abstract class Bar{
+    int id
+}
+
+class BarProducer{
+    Factory wonka, oompaloompa
+    int count
+    int id
+
+    BarProducer(int identifier)
+    void run()
+}
+
+interface Factory{
+    Bar create(int id)
+}
+
+class OompaloompaBar{
+    OompaloompaBar(int identifier)
+}
+
+class OompaloompaBarFactory{
+    int counter
+    static OompaloompaBarFactory
+
+    OompaloompaBarFactory()
+    synchronized Bar create(int id)
+    static synchronized OompaloompaBarFactory getInstance()
+}
+
+class SingletonfactoryTest{
+    static void main()
+}
+
+class WonkaBar{
+    WonkaBar(int identifier)
+}
+
+class WonkaBarFactory{
+    int counter
+    static WonkaBarFactory uniqueInstance
+
+    WonkaBarFactory()
+    synchronized Bar create(int id)
+    static synchronized WonkaBarFactory getInstance()
+}
+
+' interface <|--
+
+BarProducer <-- SingletonfactoryTest: Uses
+
+WonkaBar <-- WonkaBarFactory: Uses
+OompaloompaBar <-- OompaloompaBarFactory: Uses
+
+WonkaBar -up-|> Bar: extends
+OompaloompaBar -up-|> Bar: extends
+
+WonkaBarFactory <-- BarProducer: Uses
+OompaloompaBarFactory <-- BarProducer: Uses
+
+Factory <|.. WonkaBarFactory
+Factory <|.. OompaloompaBarFactory
+
+@enduml
