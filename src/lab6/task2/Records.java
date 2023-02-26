@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Adapter;
+package lab6.task2;
 
 import java.util.ArrayList;
 

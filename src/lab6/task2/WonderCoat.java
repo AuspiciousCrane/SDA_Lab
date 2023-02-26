@@ -1,4 +1,4 @@
-package Adapter;
+package lab6.task2;
 
 import java.util.ArrayList;
 
