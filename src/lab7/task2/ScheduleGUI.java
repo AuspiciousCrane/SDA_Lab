@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.table.*;
+import java.io.*;
 
 public class ScheduleGUI extends JFrame {  // Caretaker
 
@@ -62,6 +63,15 @@ public class ScheduleGUI extends JFrame {  // Caretaker
     fileMenu.add(saveAsMenuItem);
 	// -- END --
 
+    // -- Custom Code --
+	JMenuItem loadMenuItem = new JMenuItem("Load");
+	loadMenuItem.addActionListener(new ActionListener() {
+	    public void actionPerformed(ActionEvent e) {
+	        loadMenuItemActionPerformed(e);
+	    }
+	});
+    fileMenu.add(loadMenuItem);
+	// -- END --
 
 
 
@@ -101,7 +111,7 @@ public class ScheduleGUI extends JFrame {  // Caretaker
 		// Set memento.
 		// COMPLETE.
                 // -- Custom Code --
-                tableModel.revert(null);
+                tableModel.deserializeMemento(null);
                 tableModel.fireTableDataChanged();
                 // -- END --
             }
@@ -124,7 +134,17 @@ public class ScheduleGUI extends JFrame {  // Caretaker
 
     // -- Custom Code --
     protected void saveAsMenuItemActionPerformed(ActionEvent evt) {
-        throw new UnsupportedOperationException();
+        FileDialog fDialog = new FileDialog(this, "Save", FileDialog.SAVE);
+        fDialog.setVisible(true);
+        String path = fDialog.getDirectory() + fDialog.getFile();
+        tableModel.serializeMemento(path); 
+    }
+
+    protected void loadMenuItemActionPerformed(ActionEvent evt) {
+        FileDialog fDialog = new FileDialog(this, "Load", FileDialog.LOAD);
+        fDialog.setVisible(true);
+        String path = fDialog.getDirectory() + fDialog.getFile();
+        tableModel.deserializeMemento(path);
     }
     // -- END --
     

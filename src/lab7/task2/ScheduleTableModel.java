@@ -76,7 +76,7 @@ public class ScheduleTableModel extends DefaultTableModel {
         return this.memento;
     }
 
-    private void serializeMemento(String fileName) {
+    public void serializeMemento(String fileName) {
         try {
             String fn = (fileName == null) ? "memento.txt" : fileName;
             FileOutputStream fos = new FileOutputStream(fn);
@@ -92,9 +92,10 @@ public class ScheduleTableModel extends DefaultTableModel {
 	// COMPLETE.
         this.memento = memento;
         setDataVector(memento.getDataVector(), memento.getColumnIdentifiers());
+        serializeMemento(null);
     }
 
-    public void revert(String fileName) {
+    public void deserializeMemento(String fileName) {
         try {
             String fn = (fileName == null) ? "memento.txt" : fileName;
             FileInputStream fis = new FileInputStream(fn);
