@@ -1,0 +1,42 @@
+@startuml
+
+class Remote{
+    
+    +setState(State state)
+
+    +getPlayState()
+    +getPausedState()
+    +getStoppedState()
+    +getRewindState()
+    +getLockedState()
+
+    +pressPlay()
+    +pressPause()
+    +pressStop()
+    +pressRewind()
+    +pressLock()
+}
+
+interface State{
+    +pressPlaying()
+    +pressPaused()
+    +pressStopped()
+    +pressRewind()
+    +pressLock()
+}
+
+class Playing
+class Paused
+class Stopped
+class Rewind
+class Locked
+
+Remote o-- State
+State <|-- Playing
+State <|-- Paused
+State <|-- Stopped
+State <|-- Rewind
+State <|-- Locked
+
+
+@enduml
