@@ -1,3 +1,4 @@
 # Ignore some files
 /.vscode
 /bin
+/out
