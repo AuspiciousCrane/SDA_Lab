@@ -1,4 +1,4 @@
-package lab7.task3.q1_2;
+package lab7.task3.q3;
 
 public class TestDrive {
 	public static void main(String[] args) {
@@ -25,6 +25,17 @@ public class TestDrive {
 
 		remote.pressRewind();
 
+		// test for locked state
+		System.out.println("Testing locked state");
+		remote.pressPlay();
+		remote.pressLock();
+
+		remote.pressPause();
+		remote.pressRewind();
+
+		remote.pressLock();
+		remote.pressPause();
+		
 
 	}
 

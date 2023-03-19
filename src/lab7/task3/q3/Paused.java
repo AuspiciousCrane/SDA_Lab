@@ -1,4 +1,4 @@
-package lab7.task3.q1_2;
+package lab7.task3.q3;
 
 /**
  * Paused.java
@@ -43,6 +43,14 @@ public class Paused implements State {
 	@Override
 	public boolean pressRewind() {
 		System.out.println("Can't press rewind");
+		return true;
+	}
+
+	@Override
+	public boolean pressLock() {
+		System.out.println("Lock buttons, press lock when paused");
+		remote.setState(remote.getLockedState());
+
 		return true;
 	}
 

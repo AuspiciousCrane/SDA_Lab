@@ -1,4 +1,6 @@
-package lab7.task3.q1_2;
+package lab7.task3.q3;
+
+import javax.management.relation.RelationSupport;
 
 /**
  * Stopped.java
@@ -46,6 +48,13 @@ public class Stopped implements State {
 		remote.setPosition(0);
 
 
+		return true;
+	}
+
+	@Override
+	public boolean pressLock() {
+		System.out.println("Locking the buttons, press lock when stopped");
+		remote.setState(remote.getLockedState());
 		return true;
 	}
 

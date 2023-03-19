@@ -1,4 +1,4 @@
-package lab7.task3.q1_2;
+package lab7.task3.q3;
 
 /**
  * State.java
@@ -11,4 +11,6 @@ public interface State {
 	public boolean pressPause();
 	public boolean pressStop();
 	public boolean pressRewind();
+	public boolean pressLock();
+
 }

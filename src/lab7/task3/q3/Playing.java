@@ -43,4 +43,11 @@ public class Playing implements State {
 		return true;
 	}
 
+	@Override
+	public boolean pressLock() {
+		System.out.println("Locking the buttons, press lock when playing");
+        remote.setState(remote.getLockedState());
+		return true;
+	}
+
 }

@@ -1,4 +1,4 @@
-package lab7.task3.q1_2;
+package lab7.task3.q3;
 
 /**
  * RemoteDevice.java
@@ -13,9 +13,11 @@ public class RemoteDevice {
 	private State paused;
 	private State stopped;
 	private State rewind;
+	private State locked;
 	
 	//the current state of the player
 	private State currentState;
+	private State previousState;
 	
 	/**
 	 * the current position of the media
@@ -30,9 +32,11 @@ public class RemoteDevice {
 		paused = new Paused(this);
 		stopped = new Stopped(this);
 		rewind = new Rewind(this);
+		locked = new Locked(this);
 	
 		// initial state is stopped	
 		currentState = stopped;
+		previousState = currentState;
 
 		// we are at the beginning of the media
 		currentPosition = 0;
@@ -40,6 +44,7 @@ public class RemoteDevice {
 
 	// set the state of the device	
 	public void setState(State currentState) {
+		this.previousState =this.currentState;
 		this.currentState = currentState;
 	}
 
@@ -51,6 +56,10 @@ public class RemoteDevice {
 	// get the current position of the media	
 	public int getPosition() {
 		return currentPosition;
+	}
+
+	public State getPreviousState(){
+		return this.previousState;
 	}
 
 	// press the Play button	
@@ -70,6 +79,10 @@ public class RemoteDevice {
 
 	public void pressRewind(){ currentState.pressRewind();}
 
+	public void pressLock(){
+		currentState.pressLock();
+	}
+
 	// return the playing state	
 	public State getPlayingState() {
 		return playing;
@@ -86,4 +99,8 @@ public class RemoteDevice {
 	}
 
 	public State getRewindState(){return rewind;}
+
+	public State getLockedState(){
+		return locked;
+	}
 }

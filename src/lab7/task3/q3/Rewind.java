@@ -1,4 +1,6 @@
-package lab7.task3.q1_2;
+package lab7.task3.q3;
+
+import javax.management.relation.RelationSupport;
 
 public class Rewind implements State{
     private RemoteDevice remote;
@@ -32,6 +34,13 @@ public class Rewind implements State{
     public boolean pressRewind() {
         System.out.println("The player is continue pressing rewind");
 
+        return false;
+    }
+
+    @Override
+    public boolean pressLock() {
+        System.out.println("Locking buttons, press lock when rewind");
+        remote.setState(remote.getLockedState());
         return false;
     }
 }
