@@ -1,4 +1,4 @@
-package headfirst.composite.menuiterator;
+package lab8.task4.composite.menuiterator;
 
 import java.util.*;
 

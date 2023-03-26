@@ -1,4 +1,4 @@
-package headfirst.composite.menu;
+package lab8.task4.composite.menu;
 
 import java.util.*;
 
