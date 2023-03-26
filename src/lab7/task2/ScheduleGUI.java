@@ -1,4 +1,4 @@
- 
+package lab7.task2; 
 
 
 import java.awt.*;
