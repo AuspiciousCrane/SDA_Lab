@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-// import java.util.Iterator;
+import java.util.Iterator;
 
 public class PancakeHouseMenu implements Menu {
 	ArrayList menuItems;
@@ -27,6 +27,7 @@ public class PancakeHouseMenu implements Menu {
 				true,
 				3.59);
 	}
+	
 
 	public void addItem(String name, String description,
 			boolean vegetarian, double price) {
@@ -39,7 +40,7 @@ public class PancakeHouseMenu implements Menu {
 	}
 
 	public Iterator createIterator() {
-		return new PancakeHouseMenuIterator(menuItems);
+		return new PancakeHouseMenuIterator(menuItems).iterate();
 	}
 
 	public String toString() {

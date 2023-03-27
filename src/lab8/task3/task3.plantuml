@@ -1,0 +1,85 @@
+@startuml
+interface Menu {
+    Iterator createIterator()
+}
+
+class MenuItem{
+    + String names
+    + String description
+    + boolean vegetarian
+    + double price
+
+    + MenuItem(String name, String description, boolean vegetarian, double price)
+    + String getName()
+    + String getDescription()
+    + double getPrice()
+    + boolean isVegetarian()
+}
+
+class DinerMenu{
+    + statice final int MAX_ITEMS
+    + int numberOfItem
+    + MenuItem[] menuItems
+
+    + DinerMenu()
+    + void addItem(String name, String description, boolean vegetarian, double price)
+    + MenuItem[] getMenuItem()
+    + Iterator createIterator()
+}
+
+class DinerMenuIterator{
+    + MenuItem[] item
+
+    + DinerMenuIterator(MenuItem[] item)
+    + Iterator iterate()
+}
+
+class MenuTestDrive{
+    static void main(String args[])
+}
+
+class PancakeHouseMenu{
+    + ArrayList menuItems
+    + PancakeHouseMenu
+
+    + void addItem(String name, String description, boolean vegetarian, double price)
+    + ArrayList getMenuItems()
+    + Iteratir createIterator()
+    + String toString()
+}
+
+class PancakeHouseMenuIterator{
+    + ArrayList item
+
+    + PancakeHouseMenuIterator(ArrayList item)
+    + Iterator iterate()
+}
+
+class Waitress{
+    + Menu pancakeHouseMenu
+    + Menu dinerMenu
+
+    + Waitress(Menu pancakeHouseMenu, Menu dinerMenu)
+    + void printMenu()
+    + void printMenu(Iterator iterator)
+    + void printVegetarianMenu()
+    + boolean isItemVegetarian(String name)
+    + void printVegetarianMenu(Iterator iterate)
+    - boolean isVegetarian(String name, Iterator iterator)
+}
+
+DinerMenu -up-|> Menu: extends
+PancakeHouseMenu -up-|> Menu: extends
+DinerMenu -up-> MenuItem: uses
+PancakeHouseMenu -up-> MenuItem: uses
+DinerMenu -down-> DinerMenuIterator: uses
+PancakeHouseMenu -down-> PancakeHouseMenuIterator: uses
+
+MenuTestDrive -up-> PancakeHouseMenu: uses
+MenuTestDrive -up-> DinerMenu: uses
+MenuTestDrive -down-> Waitress: uses
+
+
+
+
+@enduml
