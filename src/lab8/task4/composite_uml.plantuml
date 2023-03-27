@@ -1,0 +1,32 @@
+@startuml
+
+
+abstract class Object_Component {
+    + render()
+    + volume()
+    + createIterator()
+}
+abstract class Prim
+class Object {
+    - List<Object_component> children
+
+    + add(Object_Component child)
+    + remove(Object_Component child)
+}   
+
+class Cube 
+class Sphere 
+
+Object_Component <|-- Object 
+Object_Component <|-- Prim
+
+Prim <|-- Cube
+Prim <|-- Sphere
+
+Object o-- Object_Component
+
+
+
+
+
+@enduml

@@ -19,6 +19,7 @@ Water *-- Oxygen
 ' Aggregation "MAYBE HAS/HAVE A"
 Team o-- Player
 Flock o-- Bird
+ShoppingCart o-- Product
 
 ' Inheritance "IS A"
 VideoGame <|-- Minecraft
