@@ -1,18 +1,21 @@
-package lab8.task4.composite.menuiterator;
- 
+package lab8.task4;
+
+
 import java.util.Iterator;
-  
+
+
 public class NullIterator implements Iterator {
-   
-	public Object next() {
-		return null;
-	}
-  
+
 	public boolean hasNext() {
 		return false;
 	}
-   
+
+	public Object next() {
+		return null;
+	}
+
 	public void remove() {
 		throw new UnsupportedOperationException();
 	}
+
 }

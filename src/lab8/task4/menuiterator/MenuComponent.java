@@ -1,4 +1,4 @@
-package lab8.task4.composite.menu;
+package lab8.task4.menuiterator;
 
 import java.util.*;
 
@@ -26,7 +26,9 @@ public abstract class MenuComponent {
 	public boolean isVegetarian() {
 		throw new UnsupportedOperationException();
 	}
-  
+
+	public abstract Iterator createIterator();
+ 
 	public void print() {
 		throw new UnsupportedOperationException();
 	}

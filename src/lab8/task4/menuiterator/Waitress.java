@@ -1,4 +1,4 @@
-package lab8.task4.composite.menuiterator;
+package lab8.task4.menuiterator;
 
 import java.util.Iterator;
   

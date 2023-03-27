@@ -1,6 +1,8 @@
-package lab8.task4.composite.menuiterator;
+package lab8.task4.menuiterator;
 
 import java.util.Iterator;
+
+
 import java.util.ArrayList;
 
 public class Menu extends MenuComponent {
