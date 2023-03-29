@@ -1,3 +1,5 @@
+package lab8.task3;
+
 
 public class MenuItem {
 	String name;
