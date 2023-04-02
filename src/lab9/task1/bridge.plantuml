@@ -1,0 +1,40 @@
+@startuml
+
+abstract class Shape
+class Rectangle 
+class Triangle
+class Circle
+class Dot 
+
+
+abstract class DrawingService
+
+class WrapDataProjector
+class WrapMonitor
+class WrapPrinter
+class WrapXML_Writer
+
+class DataProjector 
+class Monitor 
+class Printer 
+class XML_Writer 
+
+Shape <|-- Rectangle
+Shape <|-- Triangle
+Shape <|-- Circle
+Shape <|-- Dot
+Shape o-- DrawingService
+
+DrawingService <|-- WrapDataProjector
+DrawingService <|-- WrapMonitor
+DrawingService <|-- WrapPrinter
+DrawingService <|-- WrapXML_Writer
+
+WrapDataProjector *-- DataProjector
+WrapMonitor *-- Monitor
+WrapPrinter *-- Printer
+WrapXML_Writer *-- XML_Writer
+
+
+
+@enduml
