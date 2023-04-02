@@ -46,6 +46,8 @@ public class Test3 {
       s.draw();
     }
 
+    Thread.sleep(2000);
+
     for (Shape s : shapes) {
       s.setDrawingService(new WrapXML_Writer());
     }
