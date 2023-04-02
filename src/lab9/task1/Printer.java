@@ -1,3 +1,6 @@
+package lab9.task1;
+
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.LinkedList;

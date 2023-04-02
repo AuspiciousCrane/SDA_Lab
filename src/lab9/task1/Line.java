@@ -1,3 +1,6 @@
+package lab9.task1;
+
+
 public class Line {
 
    public int x1;

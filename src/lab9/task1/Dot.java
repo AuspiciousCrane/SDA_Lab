@@ -1,3 +1,6 @@
+package lab9.task1;
+
+
 public class Dot extends Shape{
     public Dot(int x, int y){
         super(x,y);

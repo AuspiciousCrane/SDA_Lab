@@ -1,3 +1,5 @@
+package lab9.task1;
+
 public class Square extends Shape {
 
   protected int length;

@@ -1,3 +1,5 @@
+package lab9.task1;
+
 public class WrapDataProjector extends DrawingService {
 
   private DataProjector data_projector;

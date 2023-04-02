@@ -1,3 +1,6 @@
+package lab9.task1;
+
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -13,6 +16,7 @@ public class Test3 {
     shapes.add(new Square(250, 100, 40));
     shapes.add(new Dot(300,50));
     shapes.add(new Dot(350,50));
+    shapes.add(new Triangle(20, 20, 50));
 
     for (Shape s : shapes) {
       s.draw();

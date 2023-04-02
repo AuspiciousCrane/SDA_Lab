@@ -1,3 +1,5 @@
+package lab9.task1;
+
 public class Rectangle extends Shape {
 
   protected int x2;

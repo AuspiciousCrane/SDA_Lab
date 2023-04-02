@@ -1,3 +1,5 @@
+package lab9.task1;
+
 public class WrapMonitor extends DrawingService {
 
   private Monitor monitor;

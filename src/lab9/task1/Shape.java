@@ -1,3 +1,6 @@
+package lab9.task1;
+
+
 public abstract class Shape {
 
   protected int x;
