@@ -1,0 +1,65 @@
+@startuml
+
+class AmericanSeller{
+    + Mediator mediator
+    + float priceInDollars
+
+    + AmericanSeller(Mediator mediator, float priceInDollar)
+    + boolean isBidAccepted(float bidInDollars)
+}
+
+class Buyer{
+    + Mediator mediator
+    + String unitOfCurrency
+
+    + Buyer(Mediator mediator, String unitOfCurrency)
+    + boolean attemptToPurchase(float bid)
+}
+
+class Demo{
+    + static void main(String[] args)
+}
+
+class DollarConverter{
+    + Mediator mediator
+    + public static final float DOLLAR_UNIT
+    + public static final float EURO_UNIT
+    + public static final float KRONA_UNIT
+
+    + DollarConverter(Mediator mediator)
+    + float convertEurosToDollars(float euros)
+    + float convertKronorToDollar(float kronor)
+    + float convertCurrencyToDollars(float amount, String unitOfCurrency)
+}
+
+class FrenchBuyer{
+    + FrenchBuyer(Mediator mediator)
+}
+
+class Mediator{
+    + Buyer swedishBuyer
+    + Buyer frenchBuyer
+    + AmericanSeller americanSeller
+    + DollarConverter dollarconverter
+
+    + void registerSwedishBuyer(SwedishBuyer buyer)
+    + void registerFrenchBuyer(FrenchBuyer buyer)
+    + void registerAmericanSeller(AmericanSeller seller)
+    + boolean placeBid(float bid, String unitOfCurrency)
+    + void registerDollarConverter(DollarConverter converter)
+}
+
+class SwedishBuyer{
+    + SwedishBuyer(Mediator mediator)
+}
+
+FrenchBuyer -down-|> Buyer: extends
+SwedishBuyer -down-|> Buyer: extends
+
+Demo -down-> Mediator: use
+Demo -down-> SwedishBuyer: use
+Demo -down-> FrenchBuyer: use
+Demo -down-> AmericanSeller: use
+Demo -down-> DollarConverter: use
+
+@enduml
