@@ -21,6 +21,9 @@ public class MapProxy implements AbstractMap {
     public String find(String key) throws Exception
     {
         // COMPLETE
+        if (get(key) != null) {
+            return get(key);
+        }
         return map.find(key);
 
 
@@ -32,6 +35,7 @@ public class MapProxy implements AbstractMap {
     {
         // COMPLETE
         map.add(key, value);
+        put(key, value);
 
 
     }
