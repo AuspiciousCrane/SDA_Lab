@@ -1,4 +1,5 @@
-// package SDA_LAB.src.lab9.task2;
+package lab9.task2;
+
 
 public class Mediator {
     Buyer swedishBuyer;
