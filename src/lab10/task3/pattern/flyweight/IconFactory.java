@@ -12,11 +12,17 @@ package pattern.flyweight;
 import java.util.*;
 
 public class IconFactory {
-    private Map iconmap = new HashMap();
+    private Map<String, AbstractIcon> iconmap = new HashMap();
+    private static IconFactory instance = null;
 
     // Singleton.
     // COMPLETE.
-
+    public static synchronized IconFactory getInstance() {
+        if (instance == null) {
+            instance = new IconFactory();
+        }
+        return instance;
+    }
 
 
 
@@ -24,14 +30,24 @@ public class IconFactory {
 
 
     public AbstractIcon createIcon(String key) {
-	// COMPLETE.
+        // COMPLETE.
+        if (this.iconmap.get(key) == null) {
+            if (key.equals("Folder")) {
+                this.iconmap.put(key, new FolderIcon());
+            } else if (key.equals("Java")) {
+                this.iconmap.put(key, new JavaIcon());
+            } else if (key.equals("Pdf")) {
+                this.iconmap.put(key, new PdfIcon());
+            } else if (key.equals("Picture")) {
+                this.iconmap.put(key, new PictureIcon());
+            } else if (key.equals("Text")) {
+                this.iconmap.put(key, new TextIcon());
+            } else if (key.equals("Unknown")) {
+                this.iconmap.put(key, new UnknownIcon());
+            }
+        }
 
-
-
-
-
-
-
+        return this.iconmap.get(key);
     }
 
     // Add helper methods here, if any.

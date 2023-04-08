@@ -39,6 +39,9 @@ public class FlyweightDemo extends JFrame
 	    this.type = type;
 	    this.name = name;
 	    this.icon = icon;
+
+
+
 	}
     }
 
@@ -60,12 +63,32 @@ public class FlyweightDemo extends JFrame
     private void loadItems() {
 	// Get the icon factory.
 	// COMPLETE.
+        this.factory = IconFactory.getInstance();
 
 
 	// Create a bunch of different kind of items.
 	// COMPLETE.
         items = new ArrayList();
+        AbstractIcon temp_icon = this.factory.createIcon("Folder");
+        items.add(new Item("Folder", "A Folder", temp_icon));
 
+        temp_icon = this.factory.createIcon("Java");
+        items.add(new Item("Java", "A Java", temp_icon));
+
+        temp_icon = this.factory.createIcon("Pdf");
+        items.add(new Item("Pdf", "A Pdf", temp_icon));
+        
+        temp_icon = this.factory.createIcon("Picture");
+        items.add(new Item("Picture", "A Picture", temp_icon));
+
+        temp_icon = this.factory.createIcon("Text");
+        items.add(new Item("Text", "A Text", temp_icon));
+
+        temp_icon = this.factory.createIcon("Unknown");
+        items.add(new Item("Unknown", "An Unknown", temp_icon));
+
+        temp_icon = this.factory.createIcon("Java");
+        items.add(new Item("Java", "Another Java", temp_icon));
 
 
 
@@ -90,7 +113,10 @@ public class FlyweightDemo extends JFrame
 	    // Get next item, and draw its icon and name:
 	    // COMPLETE.
             item = (Item) items.get(i);
+            boolean isSelected = false;
 
+            if (this.selectedName.equals(item.name)) isSelected = true;
+            item.icon.draw(g, x, row, item.name, isSelected);
 
 
 
