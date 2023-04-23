@@ -1,0 +1,31 @@
+@startuml
+
+class Body{}
+class Car{}
+interface CarElement{}
+class CarElementDoVisitor{}
+class CarElementPrintVisitor{}
+class CarElementVisitor{}
+class Engine{}
+class VisitorDemo{}
+class Wheel{}
+
+Body -down-|> CarElement
+Car -down-|> CarElement
+Car -> Wheel
+Car -> Body
+Car -> Engine
+CarElementDoVisitor -up-|> CarElementVisitor
+CarElementPrintVisitor -up-|> CarElementVisitor
+Engine -down-|> CarElement
+VisitorDemo -right-> Car
+VisitorDemo -down-> CarElementPrintVisitor
+VisitorDemo -down-> CarElementDoVisitor
+Wheel -down-|> CarElement
+
+
+
+
+
+
+@enduml
