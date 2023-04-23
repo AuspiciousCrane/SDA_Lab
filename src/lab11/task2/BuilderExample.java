@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package builderlab;
+package lab11.task2;
 
 /**
  *
@@ -30,6 +30,7 @@ public class BuilderExample {
     BurgerMealBuilder burgerBuilder = new BurgerMealBuilder();
     HealthyMealBuilder healthyBuilder = new HealthyMealBuilder();
 
+    //set burger builder
     cook.setMealBuilder (burgerBuilder);
 
     cook.constructMeal();
@@ -37,9 +38,24 @@ public class BuilderExample {
 
     System.out.println("Order up! A " + meal);
 
-
-
+    //set healthy meal builder
     cook.setMealBuilder (healthyBuilder);
+
+    cook.constructMeal();
+    meal = cook.getMeal();
+
+    System.out.println("Order up! A " + meal);
+
+    //set healthy meal builder
+    cook.setMealBuilder (healthyBuilder);
+
+    cook.constructMeal();
+    meal = cook.getMeal();
+
+    System.out.println("Order up! A " + meal);
+
+    //set burger builder
+    cook.setMealBuilder (burgerBuilder);
 
     cook.constructMeal();
     meal = cook.getMeal();

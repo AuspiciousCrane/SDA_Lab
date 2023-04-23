@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package builderlab;
+package lab11.task2;
 
 /**
  *
@@ -44,7 +44,10 @@ public class Cook {
    * Uses the meal builder of this cook to construct all portions of a meal.
    */
   public void constructMeal() {
-    // Take the necessary steps
+    builder.createNewMeal();
+    builder.buildEntree();
+    builder.buildSide();
+    builder.buildDrink();
   }
 
 }
